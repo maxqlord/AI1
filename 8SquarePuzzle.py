@@ -1,10 +1,11 @@
 class Puzzle:
     def __init__(self):
-        goalMatrix = [3][3]  #correct answer matrix
-        myMatrix = [3][3] #filled in a later method
+        self.goalMatrix = [3][3]  #correct answer matrix
+        self.myMatrix = [3][3] #filled in a later method
         for r in range(0,3):
             for c in range(0,3):
                 goalMatrix[r][c] = r*3+c+1
+        self.myNum = 0
     
     def possibleMoves(): #finds the possible numbers that can switch with
                          #the blank space/line and puts them in an array
@@ -50,11 +51,21 @@ class Puzzle:
                 if myMatrix[r][c] == num:
                     return r*3+c
     def createMatrix(num): #takes in a nine digit number like 123456789 to create goal state
+        self.myNum = num
         stringVersion = str(num)
         for r in range(0,3):
             for c in range(0,3):
                 myMatrix[r][c] = stringVersion[r*3+c]
-    def main
+    def createNumFromMoves(self,arrA[],num):  #finds all possible 2-4 new nums from the number tobe able to create a child of num
+    def createTree():
+        t = new Tree()
+        t.addRoot(num)
+        found = False
+        while(found == False):
+            t.addChild(
+    def main(num):
+        createMatrix(num)
+
                 
 class Node:
     def __init__(self, val):
