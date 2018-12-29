@@ -61,8 +61,12 @@ def found(n):
 def main():
     startString = input("Enter start word: ")
     endString = input("Enter end word: ")
-    filename = input("Enter dictionary filename: ")
-    BFS(startString, endString, inputFile(filename))
+    if len(startString) != len(endString):
+        print("Words must be the same length")
+    elif len(startString) < 6 or len(startString) > 10:
+        print("Words must be between 6 and 10 letters long")
+    else:
+        BFS(startString, endString, inputFile(str(len(startString)) + "letterwords.txt"))
     
     
 class Node:
